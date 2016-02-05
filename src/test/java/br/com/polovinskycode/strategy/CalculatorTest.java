@@ -78,4 +78,72 @@ public class CalculatorTest {
             assertThat(e.getMessage(), containsString("Null attribute"));
         }
     }
+
+    @Test
+    public void givenTwoValues_PassingNumberTwoLessThanNumberOne_CalculateTheMultiply() throws Exception {
+
+        Function function = new Function(new Multiply());
+        Long numberOne = 5L;
+        Long numberTwo = 15L;
+        Long result = function.calc(numberOne, numberTwo);
+        assertThat(result, is(75L));
+    }
+
+    @Test
+    public void givenTwoValues_PassingNumberOneLessThanNumberTwo_CalculateTheMultiply() throws Exception {
+
+        Function function = new Function(new Multiply());
+        Long numberOne = 10L;
+        Long numberTwo = 30L;
+        Long result = function.calc(numberOne, numberTwo);
+        assertThat(result, is(300L));
+    }
+
+    @Test
+    public void givenTwoValues_PassingNumberNull_ThrowException_CalculateTheMultiply() throws Exception {
+
+        try {
+            Function function = new Function(new Multiply());
+            Long numberOne = null;
+            Long numberTwo = 30L;
+            Long result = function.calc(numberOne, numberTwo);
+            fail("Should Throw Exception");
+        } catch (Exception e) {
+            assertThat(e.getMessage(), containsString("Null attribute"));
+        }
+    }
+
+    @Test
+    public void givenTwoValues_PassingNumberTwoLessThanNumberOne_CalculateTheDivide() throws Exception {
+
+        Function function = new Function(new Divide());
+        Long numberOne = 5L;
+        Long numberTwo = 15L;
+        Long result = function.calc(numberOne, numberTwo);
+        assertThat(result, is(0l));
+    }
+
+    @Test
+    public void givenTwoValues_PassingNumberOneLessThanNumberTwo_CalculateTheDivide() throws Exception {
+
+        Function function = new Function(new Divide());
+        Long numberOne = 10L;
+        Long numberTwo = 30L;
+        Long result = function.calc(numberOne, numberTwo);
+        assertThat(result, is(0l));
+    }
+
+    @Test
+    public void givenTwoValues_PassingNumberNull_ThrowException_CalculateTheDivide() throws Exception {
+
+        try {
+            Function function = new Function(new Divide());
+            Long numberOne = null;
+            Long numberTwo = 30L;
+            Long result = function.calc(numberOne, numberTwo);
+            fail("Should Throw Exception");
+        } catch (Exception e) {
+            assertThat(e.getMessage(), containsString("Null attribute"));
+        }
+    }
 }
