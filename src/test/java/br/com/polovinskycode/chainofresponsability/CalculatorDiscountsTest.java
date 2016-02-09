@@ -36,4 +36,14 @@ public class CalculatorDiscountsTest {
         double finalDiscount = discounts.calculate(budget);
         assertThat(finalDiscount, is(50.0));
     }
+
+    @Test
+    public void discountCalculate_WithOneItem_GivenSevenPercentDiscount() {
+
+        CalculatorDiscounts discounts = new CalculatorDiscounts();
+        Budget budget = new Budget(1000.0);
+
+        double finalDiscount = discounts.calculate(budget);
+        assertThat(finalDiscount, is(70.0));
+    }
 }
