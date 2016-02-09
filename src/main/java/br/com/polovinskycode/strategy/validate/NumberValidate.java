@@ -1,4 +1,4 @@
-package br.com.polovinskycode.validate;
+package br.com.polovinskycode.strategy.validate;
 
 public class NumberValidate {
 

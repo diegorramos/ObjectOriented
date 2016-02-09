@@ -1,6 +1,6 @@
 package br.com.polovinskycode.strategy;
 
-import br.com.polovinskycode.validate.NumberValidate;
+import br.com.polovinskycode.strategy.validate.NumberValidate;
 
 public class Function {
 
